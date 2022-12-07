@@ -39,7 +39,9 @@ class StorePostRequest extends FormRequest
 
             'category_id' => 'required',
 
-            'status'=> 'required|in:1,2'
+            'status'=> 'required|in:1,2',
+
+            'file' => 'image'
 
         ];
 
