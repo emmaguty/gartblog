@@ -315,7 +315,12 @@ return [
             'text'        => 'Dashboard',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
-            'label'       => 4,
+        ],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-users fa-fw',
+            'label'       => 2,
             'label_color' => 'success',
         ],
         ['header' => 'Administrador'],
