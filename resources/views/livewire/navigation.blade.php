@@ -1,10 +1,10 @@
-<nav class="bg-gray-800" x-data="{ open:false }">
+<nav class="bg-orange-400" x-data="{ open:false }">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
 
     <!-- Mobile menu button-->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <button x-on:click="open = true" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+        <button x-on:click="open = true" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-orange-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only"></span>
           <!--
             Icon when menu is closed.
@@ -33,8 +33,8 @@
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
       <!-- Logotipo -->
           <a href="/" class="flex flex-shrink-0 items-center">
-            <img class="block h-8 w-auto lg:hidden" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
-            <img class="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+            <img class="block h-8 w-auto lg:hidden" src="https://i.ibb.co/Dwdm05d/gart.png" alt="GART">
+            <img class="hidden h-8 w-auto lg:block" src="https://i.ibb.co/Dwdm05d/gart.png" alt="GART">
           </a>
 
         <!-- Menu lg -->
@@ -84,7 +84,13 @@
           <div x-show="open" x-on:click.away="open = false" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
               <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Tu Perfil</a>
-              <a href="{{route('admin.home')}}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Administrar</a>
+              
+
+              @can('admin.home')
+                <a href="{{route('admin.home')}}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Administrar</a>
+              @endcan
+
+
               <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Ajustes</a>
                 
               <form method="POST" action="{{ route('logout') }}">
