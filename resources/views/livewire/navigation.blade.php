@@ -4,7 +4,7 @@
 
     <!-- Mobile menu button-->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <button x-on:click="open = true" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-orange-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+        <button x-on:click="open = true" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only"></span>
           <!--
             Icon when menu is closed.
@@ -33,8 +33,8 @@
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
       <!-- Logotipo -->
           <a href="/" class="flex flex-shrink-0 items-center">
-            <img class="block h-8 w-auto lg:hidden" src="https://i.ibb.co/Dwdm05d/gart.png" alt="GART">
-            <img class="hidden h-8 w-auto lg:block" src="https://i.ibb.co/Dwdm05d/gart.png" alt="GART">
+            <img class="block h-8 w-auto lg:hidden" src="https://i.ibb.co/Dwdm05d/gart.png" alt="Your Company">
+            <img class="hidden h-8 w-auto lg:block" src="https://i.ibb.co/Dwdm05d/gart.png" alt="Your Company">
           </a>
 
         <!-- Menu lg -->

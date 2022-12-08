@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body class="font-sans antialiased">
-        <x-jet-banner />
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <div class="min-h-screen bg-gray-100">
+    <!-- Styles -->
+    @livewireStyles
 
-            @livewire('navigation')
+    <!-- PWA  -->
+    <meta name="theme-color" content="#6777ef" />
+    <link rel="apple-touch-icon" href="{{ asset('logo_gart.png') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+</head>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+<body class="font-sans antialiased">
+    <x-jet-banner />
 
-        @stack('modals')
+    <div class="min-h-screen bg-gray-100">
 
-        @livewireScripts
-    </body>
-</html>
+        @livewire('navigation')
+
+        <!-- Page Content -->
+        <main>
+            {{ $slot }}
+        </main>
+    </div>
+
+    @stack('modals')
+
+    @livewireScripts
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").then(function(reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        } <
+        /body>
+
+        <
+        /html>
