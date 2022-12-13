@@ -317,6 +317,7 @@ return [
             'icon'        => 'fas fa-tachometer-alt fa-fw',
             'can'        => 'admin.home'
         ],
+
         [
             'text'        => 'Usuarios',
             'route'         => 'admin.users.index',
@@ -325,6 +326,16 @@ return [
             'label_color' => 'success',
             'can'         => 'admin.users.index'
         ],
+
+        [
+            'text'        => 'Lista de roles',
+            'route'         => 'admin.roles.index',
+            'icon'        => 'fas fa-users-cog fa-fw',
+            'label'       => 3,
+            'label_color' => 'danger',
+            // 'can'         => 'admin.users.index'
+        ],
+
         ['header' => 'Administrador'],
         [
             'text' => 'Categorias',
